@@ -9,3 +9,8 @@ guest:guest@localhost:5672 adalah sebuah URI koneksi yang digunakan pada messagi
 - guest: merupakan password yang digunakan untuk koneksi ke server
 - localhost merupakan alamat server yang digunakan, dalam kasus ini 'localhost' merupakan mesin yang menjalankan aplikasi
 - 5672 merupakan port yang digunakan untuk koneksi ke server
+
+![Slow event](Image-1.png)
+
+3. Why is the queue filled? 
+Pada main.rs kita telah menggunakan sleep untuk menunda proses handling message. Hal ini menyebabkan message yang masuk ke queue akan menumpuk karena proses handling message yang lambat. Dalam komputer saya memuncak sekitar 21 dalam queue.
